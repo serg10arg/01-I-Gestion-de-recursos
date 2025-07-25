@@ -36,7 +36,7 @@ Estos diagramas ilustran el recorrido de una petición a través de las diferent
 
 Este diagrama muestra el "camino feliz" cuando un cliente solicita un recurso que existe y el caso en que no se encuentra.
 
-```
+```mermaid
 sequenceDiagram
     participant Client as Cliente
     participant Controller as ControladorPersona
@@ -66,18 +66,13 @@ sequenceDiagram
         ExceptionHandler-->>Client: 404 Not Found con mensaje de error
     end
 
-    deactivate Controller
-    deactivate Service
-    deactivate Repository
-    deactivate Mapper
-
 ```
 
 ### **Flujo de Escritura (Ej: `POST /api/personas`)**
 
 Este diagrama es más completo, ya que muestra las diferentes bifurcaciones del flujo: validación fallida, conflicto de negocio o creación exitosa.
 
-```
+```mermaid
 sequenceDiagram
     participant Client as Cliente
     participant Spring as Framework Spring
@@ -121,10 +116,6 @@ sequenceDiagram
         end
     end
 
-    deactivate Controller
-    deactivate Service
-    deactivate Repository
-    deactivate Mapper
 
 ```
 
